@@ -1,0 +1,20 @@
+# Byte-compiled / cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+
+# System files
+.DS_Store
+
+# Experiments and logs - include only the structure, not huge data files
+experiments/*/*.png
+experiments/*/*.csv
+experiments/*/*.json
+logs/*
+
+# Keep only folder structure
+!experiments/
+!logs/

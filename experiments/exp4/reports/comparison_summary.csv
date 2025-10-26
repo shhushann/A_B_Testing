@@ -1,0 +1,5 @@
+Algorithm,mean_reward,final_reward,total_reward,num_trials
+epsilongreedy_eps0.01,0.6669,1.0,6669.0,10000.0
+thompsonsampling_multiarmed,0.753,1.0,7530.0,10000.0
+epsilongreedy_eps0.1,0.7212,1.0,7212.0,10000.0
+epsilongreedy_eps0.3,0.6685,0.0,6685.0,10000.0
