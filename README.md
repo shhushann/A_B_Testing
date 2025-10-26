@@ -2,7 +2,7 @@
 
 
 
-This repository implements and compares two adaptive **A/B Testing** algorithms — **Epsilon-Greedy** and **Thompson Sampling** — within the **Multi-Armed Bandit** framework.
+This repository implements and compares two adaptive **A/B Testing** algorithms | **Epsilon-Greedy** and **Thompson Sampling** , within the **Multi-Armed Bandit** framework.
 
 
 ---
@@ -28,7 +28,7 @@ In this homework, we:
 | Class | Description |
 |--------|-------------|
 | **`Bandit`** | Abstract base class with template methods for all algorithms (`pull`, `update`, `experiment`, `report`). |
-| **`EpsilonGreedy`** | Implements ε-greedy with optional **decaying ε = 1/t**. Balances exploration and exploitation. |
+| **`EpsilonGreedy`** | Implements ε-greedy with decaying ε = max(0.01, 1 / √t) : high initial exploration that slowly decreases to 0.01. |
 | **`ThompsonSampling`** | Bayesian algorithm using Beta priors to sample uncertainty and select arms probabilistically. |
 | **`Visualization`** | Generates reward/regret plots and learning curves. |
 | **`Comparison`** | Loads reports, summarizes mean and total rewards, ranks algorithms, and identifies the best performer. |
@@ -41,7 +41,7 @@ In this homework, we:
 |------------|--------|-------------|
 | **Number of Arms (Ads)** | 3 | Each ad has a true reward probability |
 | **True Rewards** | `[1,2,3,4]` | Used for both algorithms |
-| **Trials (N)** | 10,000 (configurable) | Number of iterations per algorithm |
+| **Trials (N)** | 20,000 (configurable) | Number of iterations per algorithm |
 | **Algorithms Tested** | Epsilon-Greedy, Thompson Sampling | |
 | **Epsilon Values** | `[0.01, 0.1, 0.3]` | Fixed and decaying variations |
 | **Logger** | `loguru` | Tracks events with timestamps and levels |
