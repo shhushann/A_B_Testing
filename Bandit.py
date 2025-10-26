@@ -34,9 +34,9 @@ logger.add(
     level="INFO"
 )
 
-NUM_TRIALS = 100000
+NUM_TRIALS = 200000
 EPS = 0.1
-BANDIT_PROBABILITIES = [0.2, 0.5, 0.75]
+BANDIT_REWARDS = [1,2,3,4]
 class Bandit(ABC):
     """ """
 
@@ -195,6 +195,7 @@ class EpsilonGreedy(Bandit):
         :param reward: 
 
         """
+
         self.N += 1
         self.p_estimate = self.p_estimate + (1 / self.N) * (reward - self.p_estimate)
 
@@ -216,6 +217,7 @@ class EpsilonGreedy(Bandit):
         rewards = np.empty(N)
 
         for i in range(N):
+            epsilon = max(0.01, 1 / np.sqrt(i + 1))
 
             if np.random.random() < epsilon:
                 j = np.random.choice(len(bandits))  # explore
@@ -246,7 +248,7 @@ class EpsilonGreedy(Bandit):
         """ """
 
         avg_reward = np.mean(self.rewards)
-        optimal_p = max(BANDIT_PROBABILITIES) / max(BANDIT_PROBABILITIES)  # placeholder; use true p* if stored
+        optimal_p = max(BANDIT_REWARDS) / max(BANDIT_REWARDS)
         avg_regret = (max(self.true_ps) - avg_reward) if hasattr(self, "true_ps") else None
 
 
