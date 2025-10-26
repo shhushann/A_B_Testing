@@ -33,6 +33,22 @@ In this homework, we:
 | **`Visualization`** | Generates reward/regret plots and learning curves. |
 | **`Comparison`** | Loads reports, summarizes mean and total rewards, ranks algorithms, and identifies the best performer. |
 
+
+
+---
+
+### Output Files and Structure
+
+Each experiment folder (`exp#`) contains the following:
+
+| Folder     | Description                                                                                                                                                                                                                               |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `reports/` | Contains all experiment outputs including: <br> • JSON and CSV summaries with comparison information <br> • Ranked results and the best-performing algorithm <br> • Individual CSV files with iteration-level rewards for each algorithm. |
+| `plots/`   | Includes all generated visualizations — learning curves, cumulative reward plots, and log-scaled plots for **Epsilon-Greedy** (for each ε value) and **Thompson Sampling**.                                                               |
+
+All reports and plots are automatically organized inside `/experiments/exp#/` after each run.
+
+
 ---
 
 ##  Experimental Setup
